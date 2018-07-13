@@ -1,0 +1,16 @@
+html, body {
+    background-image: url("images/images(2).jpg");
+    background-image: url("images/images(3).jpg");
+    background-image: url("images/images(8).jpg");
+    background-image: url("images/images.jpg");
+    background-repeat: repeat-x;
+}
+#favorites-buttons{
+    background-color: dodgerblue;
+    color: aquamarine;
+}
+#favorite-things-form{
+    color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
