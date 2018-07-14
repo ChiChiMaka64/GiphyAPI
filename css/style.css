@@ -1,16 +1,14 @@
 html, body {
-    background-image: url("images/images(2).jpg");
-    background-image: url("images/images(3).jpg");
-    background-image: url("images/images(8).jpg");
-    background-image: url("images/images.jpg");
-    background-repeat: repeat-x;
+    background-image: url("../images/images.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-#favorites-buttons{
-    background-color: dodgerblue;
-    color: aquamarine;
+.top-favorites{
+    font-size: large;
 }
 #favorite-things-form{
     color: aqua;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    float: right;
 }
