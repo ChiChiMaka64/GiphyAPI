@@ -1,18 +1,7 @@
-var newButton = $("#favorites", "<button>");
 $(".top-favorites").on("click", "button", function() {
     // get text from button that you just clicked and save it to a variable.
-    var searchWord=$(this).text()
-    var queryURL = 'https://api.giphy.com/v1/gifs/search?q='+ searchWord +'&api_key=9Pqpg72Hn0V2mHELBrXruk5iAK4OLles&limit=10' 
-    fetch(queryURL)
-  .then(response => {
-    return response.json();
-  })
-  .then(json => {
-    console.log(json);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+    var searchWord=$(this).text();
+    var queryURL = 'https://api.giphy.com/v1/gifs/search?q='+ searchWord +'&api_key=9Pqpg72Hn0V2mHELBrXruk5iAK4OLles&limit=20';
     
     $.ajax({
         url: queryURL,
@@ -20,20 +9,20 @@ $(".top-favorites").on("click", "button", function() {
       })
       .then(function(response) {
         console.log(response);
-        $("body").append("<img src='" + response.data[0].images.original.url + "' />");
+        for (i=0; i<response.data.length; i++) {
+          $("body").append("<img src='" + response.data[i].images.original.url + "' />");
+        }
       });
-})
-//having trouble adding a new button. see attempt below.
- function addButton(element) {
-$("#favorite-things-form").on("click", element);
- var btn=document.createElement("button");
-var t = document.createTextNode(t);
-   btn.appendChild(t);
-document.body.appendChild(btn);
-}
-addButton();
+});
 
-   console.log("worked")
+$("#addFavorite").on("click", function() {
+  event.preventDefault();
+  var btntext = $("#favorites-input").val().trim();
+  var newButton = $("<button>");
+  newButton.text(btntext);
+$(".top-favorites").append(newButton);
+});
+
 
 
       
