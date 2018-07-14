@@ -23,10 +23,16 @@ $(".top-favorites").on("click", "button", function() {
         $("body").append("<img src='" + response.data[0].images.original.url + "' />");
       });
 })
-function addButton(element) {
-  return document.addButton(element)
-$("#favorite-things-form").onkeyup("text","button", "submit")
+//having trouble adding a new button. see attempt below.
+ function addButton(element) {
+$("#favorite-things-form").on("click", element);
+ var btn=document.createElement("button");
+var t = document.createTextNode(t);
+   btn.appendChild(t);
+document.body.appendChild(btn);
 }
+addButton();
+
    console.log("worked")
 
 
